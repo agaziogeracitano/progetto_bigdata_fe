@@ -1,0 +1,1 @@
+[{"order_dow":0,"ordiniTotali":600905},{"order_dow":1,"ordiniTotali":587478},{"order_dow":2,"ordiniTotali":467260},{"order_dow":5,"ordiniTotali":453368},{"order_dow":6,"ordiniTotali":448761},{"order_dow":3,"ordiniTotali":436972},{"order_dow":4,"ordiniTotali":426339}]
