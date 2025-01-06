@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert'; // Per il parsing JSON
+import 'dart:convert';
 import 'package:fl_chart/fl_chart.dart';
 
 class OrdiniOre extends StatefulWidget {
@@ -18,7 +18,7 @@ class _OrdiniOreState extends State<OrdiniOre> {
 
   // Funzione per la prima chiamata (dati per il grafico)
   Future<void> fetchData() async {
-    final url = Uri.parse("http://localhost:6969/ordiniOre");
+    final url = Uri.parse("http://localhost:6060/ordiniOre");
     setState(() {
       _isLoadingLeft = true;
     });
@@ -61,7 +61,7 @@ class _OrdiniOreState extends State<OrdiniOre> {
     });
 
     try {
-      final url = Uri.parse("http://localhost:6969/chiediAchat");
+      final url = Uri.parse("http://localhost:6060/chiediAchat");
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
@@ -186,7 +186,7 @@ class _OrdiniOreState extends State<OrdiniOre> {
                             _isLoadingRight
                                 ? "Caricamento..."
                                 : secondResponse.isEmpty
-                                ? "Risultato della seconda chiamata non disponibile."
+                                ? "Nessun commento del grafico. Premi il bottone sotto per eseguire l\'analisi."
                                 : secondResponse, // Visualizza la risposta della seconda chiamata
                             style: TextStyle(fontSize: 16),
                           ),
@@ -203,7 +203,7 @@ class _OrdiniOreState extends State<OrdiniOre> {
                         ),
                         child: _isLoadingRight
                             ? CircularProgressIndicator(color: Colors.white)
-                            : Text('Esegui la seconda chiamata'),
+                            : Text('Analizza i risultati'),
                       ),
                     ],
                   ),

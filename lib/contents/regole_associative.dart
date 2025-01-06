@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class RegoleAssociative extends StatelessWidget {
   Future<List<dynamic>> fetchRegoleAssociative() async {
-    final response = await http.get(Uri.parse('http://localhost:6969/regoleAssociative'));
+    final response = await http.get(Uri.parse('http://localhost:6060/regoleAssociative'));
 
     if (response.statusCode == 200) {
       return json.decode(response.body);

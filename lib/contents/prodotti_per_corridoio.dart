@@ -21,7 +21,7 @@ class _ProdottiPerCorridoioState extends State<ProdottiPerCorridoio> {
       _leftQueryCompleted = false; // Disabilita il bottone a destra finché la chiamata non termina
     });
 
-    final response = await http.get(Uri.parse('http://localhost:6969/topProdottiPerAisle'));
+    final response = await http.get(Uri.parse('http://localhost:6060/topProdottiPerAisle'));
 
     if (response.statusCode == 200) {
       setState(() {
@@ -43,7 +43,7 @@ class _ProdottiPerCorridoioState extends State<ProdottiPerCorridoio> {
       _isLoadingRight = true;
     });
 
-    final response = await http.get(Uri.parse('http://localhost:6969/chiediAchat'));
+    final response = await http.get(Uri.parse('http://localhost:6060/chiediAchat'));
 
     if (response.statusCode == 200) {
       setState(() {

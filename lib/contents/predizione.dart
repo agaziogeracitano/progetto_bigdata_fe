@@ -22,7 +22,7 @@ class _PredizioneState extends State<Predizione> {
   List<dynamic> _suggestions = [];
 
   Future<void> fetchPredizione(String dati) async {
-    final response = await http.get(Uri.parse('http://localhost:6969/predizione?dati=$dati'));
+    final response = await http.get(Uri.parse('http://localhost:6060/predizione?dati=$dati'));
 
     if (response.statusCode == 200) {
       setState(() {

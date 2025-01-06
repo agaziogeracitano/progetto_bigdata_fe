@@ -25,7 +25,7 @@ class _GiornoConPiuOrdiniState extends State<GiornoConPiuOrdini> {
     });
 
     try {
-      final response = await http.get(Uri.parse('http://localhost:6969/topOrderDay'));
+      final response = await http.get(Uri.parse('http://localhost:6060/topOrderDay'));
 
       if (response.statusCode == 200) {
         final List<dynamic> jsonData = json.decode(response.body);
@@ -64,7 +64,7 @@ class _GiornoConPiuOrdiniState extends State<GiornoConPiuOrdini> {
     });
 
     try {
-      final response = await http.get(Uri.parse('http://localhost:6969/chiediAchat'));
+      final response = await http.get(Uri.parse('http://localhost:6060/chiediAchat'));
 
       if (response.statusCode == 200) {
         setState(() {

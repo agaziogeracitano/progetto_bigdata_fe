@@ -26,7 +26,7 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
     });
 
     try {
-      final response = await http.get(Uri.parse('http://localhost:6969/analizzaUtente/$utenteId'));
+      final response = await http.get(Uri.parse('http://localhost:6060/analizzaUtente/$utenteId'));
 
       if (response.statusCode == 200) {
         setState(() {
@@ -59,7 +59,7 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
 
     try {
       // Simula una chiamata al backend per ottenere i dettagli secondari
-      final response = await http.get(Uri.parse('http://localhost:6969/chiediAchat'));
+      final response = await http.get(Uri.parse('http://localhost:6060/chiediAchat'));
 
       if (response.statusCode == 200) {
         setState(() {

@@ -19,7 +19,7 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
 
   // Metodo per chiamare il backend per i prodotti
   Future<void> _fetchTopNProdotti() async {
-    final String baseUrl = 'http://localhost:6969/topNProdotti';
+    final String baseUrl = 'http://localhost:6060/topNProdotti';
     final String num = _numController.text;
 
     if (num.isEmpty) {
@@ -54,7 +54,7 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
 
   // Metodo per la seconda chiamata al backend
   Future<void> _fetchSecondData() async {
-    final String baseUrl = 'http://localhost:6969/chiediAchat';
+    final String baseUrl = 'http://localhost:6060/chiediAchat';
 
     setState(() {
       _isSecondCallLoading = true; // Imposta il flag per il caricamento dei commenti

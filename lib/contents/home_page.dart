@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:progetto_bigdata_fe/contents/analizza_utente.dart';
+import 'package:progetto_bigdata_fe/contents/articoli_ordine.dart';
 import 'package:progetto_bigdata_fe/contents/ordini_ore.dart';
 import 'package:progetto_bigdata_fe/contents/predizione.dart';
 import 'package:progetto_bigdata_fe/contents/regole_associative.dart';
@@ -7,7 +8,6 @@ import 'package:progetto_bigdata_fe/contents/top_n_prodotti.dart';
 import 'package:progetto_bigdata_fe/contents/prodotti_per_corridoio.dart';
 import 'package:progetto_bigdata_fe/contents/prodotto_per_corridoio_specifico.dart';
 import 'package:progetto_bigdata_fe/contents/giorno_con_piu_ordini.dart';
-import 'package:progetto_bigdata_fe/contents/posizione_frequente_prodotto.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 
@@ -124,11 +124,11 @@ class HomePage extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text('Posizione Frequente del Prodotto', style: TextStyle(color: Colors.black)),
+                title: Text('Numero articoli per ordine', style: TextStyle(color: Colors.black)),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PosizioneFrequenteProdotto()),
+                    MaterialPageRoute(builder: (context) => ArticoliOrdine()),
                   );
                 },
               ),
