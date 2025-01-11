@@ -9,14 +9,14 @@ class OrdiniOre extends StatefulWidget {
 }
 
 class _OrdiniOreState extends State<OrdiniOre> {
-  List<Map<String, dynamic>> ordiniData = []; // Lista dei risultati della prima chiamata
+  List<Map<String, dynamic>> ordiniData = [];
   List<FlSpot> dataPoints = []; // Lista dei punti per il grafico
-  bool _isLoadingLeft = false; // Stato di caricamento per la prima chiamata
-  bool _isLoadingRight = false; // Stato di caricamento per la seconda chiamata
-  bool _leftQueryCompleted = false; // Stato di completamento della prima chiamata
-  String secondResponse = ""; // Risultato della seconda chiamata
+  bool _isLoadingLeft = false;
+  bool _isLoadingRight = false;
+  bool _leftQueryCompleted = false;
+  String secondResponse = "";
 
-  // Funzione per la prima chiamata (dati per il grafico)
+
   Future<void> fetchData() async {
     final url = Uri.parse("http://localhost:6060/ordiniOre");
     setState(() {
@@ -37,10 +37,10 @@ class _OrdiniOreState extends State<OrdiniOre> {
         }).toList();
 
         setState(() {
-          // Assicurati che ordiniData sia una lista di Map
+
           ordiniData = List<Map<String, dynamic>>.from(jsonResponse);
           dataPoints = points;
-          _leftQueryCompleted = true; // Prima chiamata completata, abilita il bottone a destra
+          _leftQueryCompleted = true;
         });
       } else {
         print("Errore HTTP: ${response.statusCode}");
@@ -54,7 +54,7 @@ class _OrdiniOreState extends State<OrdiniOre> {
     }
   }
 
-  // Funzione per la seconda chiamata
+
   Future<void> fetchSecondData() async {
     setState(() {
       _isLoadingRight = true;

@@ -84,8 +84,8 @@ class _PredizioneState extends State<Predizione> {
                       _updateTextField();
                     });
                   },
-                  backgroundColor: Colors.lightBlue.shade100, // Colore di sfondo azzurro chiaro
-                  selectedColor: Colors.blue.shade300, // Colore selezionato (azzurro più scuro)
+                  backgroundColor: Colors.lightBlue.shade100,
+                  selectedColor: Colors.blue.shade300,
                   labelStyle: TextStyle(
                     color: _selectedProducts[product] ?? false
                         ? Colors.white
@@ -106,12 +106,12 @@ class _PredizioneState extends State<Predizione> {
               },
               child: Text('Ottieni Predizione', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Correzione qui
+                backgroundColor: Colors.blue,
               ),
             ),
             SizedBox(height: 20),
 
-            // Lista dei suggerimenti ricevuti dalla risposta
+
             Expanded(
               child: _suggestions.isEmpty
                   ? Center(child: Text('Nessun suggerimento disponibile.'))

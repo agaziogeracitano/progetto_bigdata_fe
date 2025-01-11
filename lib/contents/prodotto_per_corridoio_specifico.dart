@@ -10,11 +10,11 @@ class ProdottoPerCorridoioSpecifico extends StatefulWidget {
 
 class _ProdottoPerCorridoioSpecificoState
     extends State<ProdottoPerCorridoioSpecifico> {
-  TextEditingController _aisleIdController = TextEditingController(); // Per inserire l'aisleId
-  Map<String, dynamic>? _prodotto; // Per salvare il risultato
-  bool _isLoading = false; // Per gestire il caricamento
+  TextEditingController _aisleIdController = TextEditingController();
+  Map<String, dynamic>? _prodotto;
+  bool _isLoading = false;
 
-  // Funzione per chiamare l'API
+
   Future<void> fetchProdottoPerCorridoioSpecifico(int aisleId) async {
     setState(() {
       _isLoading = true;
@@ -30,11 +30,11 @@ class _ProdottoPerCorridoioSpecificoState
         final List<dynamic> responseBody = json.decode(response.body);
         if (responseBody.isNotEmpty) {
           setState(() {
-            _prodotto = responseBody[0]; // Ottieni il primo prodotto dall'array
+            _prodotto = responseBody[0];
           });
         } else {
           setState(() {
-            _prodotto = null; // Nessun prodotto trovato
+            _prodotto = null;
           });
         }
       } else {
@@ -82,8 +82,8 @@ class _ProdottoPerCorridoioSpecificoState
             // Bottone per effettuare la chiamata API
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Colore di sfondo
-                foregroundColor: Colors.white, // Colore del testo
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 textStyle: TextStyle(fontSize: 16),
               ),

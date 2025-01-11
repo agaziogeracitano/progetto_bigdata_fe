@@ -9,15 +9,14 @@ class GiornoConPiuOrdini extends StatefulWidget {
 }
 
 class _GiornoConPiuOrdiniState extends State<GiornoConPiuOrdini> {
-  List<Map<String, dynamic>> _giorni = []; // Lista dei giorni con i totali
-  bool _isLoadingLeft = false; // Stato di caricamento sinistro
-  bool _isLoadingRight = false; // Stato di caricamento destro
-  bool _leftQueryCompleted = false; // Stato di completamento della query sinistra
-  String _secondResponse = ''; // Risultato della seconda chiamata
+  List<Map<String, dynamic>> _giorni = []; // Lista dei giorni
+  bool _isLoadingLeft = false;
+  bool _isLoadingRight = false;
+  bool _leftQueryCompleted = false;
+  String _secondResponse = '';
 
   final giorniSettimana = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
 
-  // Funzione per chiamare l'API (sinistra)
   Future<void> fetchGiornoConPiuOrdini() async {
     setState(() {
       _isLoadingLeft = true;
@@ -57,7 +56,6 @@ class _GiornoConPiuOrdiniState extends State<GiornoConPiuOrdini> {
     }
   }
 
-  // Funzione per la seconda chiamata (destra)
   Future<void> fetchSecondData() async {
     setState(() {
       _isLoadingRight = true;
@@ -88,7 +86,6 @@ class _GiornoConPiuOrdiniState extends State<GiornoConPiuOrdini> {
   @override
   void initState() {
     super.initState();
-    // Non chiamiamo fetchGiornoConPiuOrdini qui, per evitare di ricaricare i dati all'avvio
   }
 
   @override

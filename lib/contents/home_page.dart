@@ -274,7 +274,7 @@ class HomePage extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                                 child: Text(
-                                  'Top N Prodotti', // Titolo personalizzato
+                                  'Top N Prodotti',
                                   style: TextStyle(
                                     fontSize: 18, // Dimensione del font
                                     color: Colors.white, // Colore del titolo
@@ -295,19 +295,18 @@ class HomePage extends StatelessWidget {
                                         sideTitles: SideTitles(
                                           showTitles: true,
                                           getTitlesWidget: (double value, TitleMeta meta) {
-                                            // Etichette dell'asse X in bianco
                                             return Container(
-                                              width: 50, // Imposta la larghezza per evitare sovrapposizioni
+                                              width: 50,
                                               child: Tooltip(
                                                 message: barDataTop[value.toInt()]['product_name'], // Nome del prodotto come tooltip
                                                 child: Text(
                                                   barDataTop[value.toInt()]['product_name'], // Nome del prodotto
                                                   style: TextStyle(
                                                     fontSize: 8,
-                                                    color: Colors.white, // Colore bianco per le etichette
-                                                    fontWeight: FontWeight.bold, // Grassetto per il testo
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
-                                                  textAlign: TextAlign.center, // Centra il testo
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
                                             );
@@ -351,14 +350,14 @@ class HomePage extends StatelessWidget {
                         );
                       },
                       child: Card(
-                        color: Colors.blue[900],  // Imposta lo sfondo del riquadro a blu scuro
+                        color: Colors.blue[900],
                         margin: EdgeInsets.all(8),
                         child: Column(
                           children: [
                             Center(
                               child: Text(
                                 'Giorno con più Ordini',
-                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),  // Testo in bianco
+                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                               ),
                             ),
                             Expanded(
@@ -397,12 +396,12 @@ class HomePage extends StatelessWidget {
                                     return PieChartSectionData(
                                       value: data['ordiniTotali'].toDouble(),
                                       title: dayLabel,  // Etichetta per il giorno della settimana
-                                      radius: 70,  // Dimensione del raggio della torta
+                                      radius: 70,
                                       color: Colors.blue[(data['order_dow'] % 7) * 100],
                                       titleStyle: TextStyle(
-                                        fontSize: 14,  // Imposta la dimensione del testo per l'etichetta
+                                        fontSize: 14,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,  // Imposta il colore del testo a bianco per contrastare con lo sfondo blu scuro
+                                        color: Colors.white,
                                       ),
                                     );
                                   }).toList(),
@@ -445,7 +444,7 @@ class HomePage extends StatelessWidget {
                                   children: [
                                     TableRow(
                                       decoration: BoxDecoration(
-                                        color: Colors.blue[100], // Colore intestazione
+                                        color: Colors.blue[100],
                                       ),
                                       children: [
                                         TableCell(
@@ -489,7 +488,6 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    // Assicurati che i dati siano una lista di mappe correttamente formattata
                                     for (var product in ordiniCorridoio)
                                       TableRow(
                                         children: [
@@ -497,7 +495,7 @@ class HomePage extends StatelessWidget {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                (product['aisle_id'] ?? 'N/A').toString(), // Cast a String
+                                                (product['aisle_id'] ?? 'N/A').toString(),
                                                 style: TextStyle(fontSize: 14),
                                               ),
                                             ),
@@ -506,7 +504,7 @@ class HomePage extends StatelessWidget {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                (product['product_name'] ?? 'N/A').toString(), // Cast a String
+                                                (product['product_name'] ?? 'N/A').toString(),
                                                 style: TextStyle(fontSize: 14),
                                               ),
                                             ),
@@ -515,7 +513,7 @@ class HomePage extends StatelessWidget {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                (product['vendite'] ?? 0).toString(), // Cast a String
+                                                (product['vendite'] ?? 0).toString(),
                                                 style: TextStyle(fontSize: 14),
                                               ),
                                             ),

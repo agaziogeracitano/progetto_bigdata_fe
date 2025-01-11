@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:syncfusion_flutter_charts/charts.dart'; // Libreria per grafici Syncfusion
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class TopNProdotti extends StatefulWidget {
   @override
@@ -12,12 +12,12 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
   final TextEditingController _numController = TextEditingController();
   List<dynamic> _prodotti = [];
   bool _isLoading = false;
-  bool _isSecondCallLoading = false; // Stato separato per il caricamento dei commenti
+  bool _isSecondCallLoading = false;
   String _responseMessage = '';
   String _secondResponse = '';
-  bool _isFirstCallMade = false; // Flag per abilitare il bottone a destra
+  bool _isFirstCallMade = false;
 
-  // Metodo per chiamare il backend per i prodotti
+
   Future<void> _fetchTopNProdotti() async {
     final String baseUrl = 'http://localhost:6060/topNProdotti';
     final String num = _numController.text;
@@ -57,7 +57,7 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
     final String baseUrl = 'http://localhost:6060/chiediAchat';
 
     setState(() {
-      _isSecondCallLoading = true; // Imposta il flag per il caricamento dei commenti
+      _isSecondCallLoading = true;
     });
 
     try {
@@ -77,23 +77,22 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
       });
     } finally {
       setState(() {
-        _isSecondCallLoading = false; // Finito il caricamento dei commenti
+        _isSecondCallLoading = false;
       });
     }
   }
 
-  // Metodo per mostrare messaggi di errore
   void _showError(String message) {
     setState(() {
       _responseMessage = message;
     });
   }
 
-  // Metodo per il grafico
+
   Widget _buildBarChart() {
     if (_prodotti.isEmpty) return Center(child: Text('Nessun risultato.'));
 
-    // Conversione dei dati in formato leggibile da Syncfusion
+
     List<_ProductData> chartData = _prodotti.map((prodotto) {
       return _ProductData(
         prodotto['product_name'],
@@ -130,7 +129,7 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
         title: Text('Top N Prodotti', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
         iconTheme: IconThemeData(
-          color: Colors.white, // Colore della freccia di navigazione
+          color: Colors.white,
         ),
       ),
       backgroundColor: Colors.white,
@@ -184,7 +183,7 @@ class _TopNProdottiPageState extends State<TopNProdotti> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Rettangolo per visualizzare la risposta (con scroll se il testo è lungo)
+                  // Rettangolo per visualizzare la risposta
                   Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(

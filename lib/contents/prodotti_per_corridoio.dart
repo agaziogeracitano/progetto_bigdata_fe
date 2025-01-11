@@ -11,10 +11,10 @@ class _ProdottiPerCorridoioState extends State<ProdottiPerCorridoio> {
   List<dynamic> _prodotti = [];
   bool _isLoadingLeft = false;
   bool _isLoadingRight = false;
-  bool _leftQueryCompleted = false; // Controllo per abilitare il bottone a destra
+  bool _leftQueryCompleted = false;
   String _secondResponse = '';
 
-  // Funzione per chiamare l'API e ottenere i dati (sinistra)
+
   Future<void> fetchProdottiPerCorridoio() async {
     setState(() {
       _isLoadingLeft = true;
@@ -37,7 +37,7 @@ class _ProdottiPerCorridoioState extends State<ProdottiPerCorridoio> {
     }
   }
 
-  // Funzione per la seconda chiamata (destra)
+
   Future<void> fetchSecondData() async {
     setState(() {
       _isLoadingRight = true;

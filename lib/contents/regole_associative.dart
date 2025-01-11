@@ -20,7 +20,7 @@ class RegoleAssociative extends StatelessWidget {
         title: Text('Regole Associative', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
         iconTheme: IconThemeData(
-          color: Colors.white, // Colore della freccia di navigazione
+          color: Colors.white,
         ),
       ),
       backgroundColor: Colors.white,

@@ -66,7 +66,7 @@ class _ArticoliOrdineState extends State<ArticoliOrdine> {
         title: Text('Numero articoli per ordine', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
         iconTheme: IconThemeData(
-          color: Colors.white, // Colore della freccia di navigazione
+          color: Colors.white,
         ),
       ),
       backgroundColor: Colors.white,
@@ -79,8 +79,8 @@ class _ArticoliOrdineState extends State<ArticoliOrdine> {
                 ? Center(child: CircularProgressIndicator())
                 : Center(
               child: SizedBox(
-                height: 300, // Altezza specifica per il grafico
-                width: double.infinity, // Larghezza per centrare il grafico
+                height: 300,
+                width: double.infinity,
                 child: BarChart(
                   BarChartData(
                     gridData: FlGridData(show: false),

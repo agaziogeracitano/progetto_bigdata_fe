@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:flutter/services.dart'; // Per usare i formati di input
+import 'package:flutter/services.dart';
 
 class AnalizzaUtente extends StatefulWidget {
   @override
@@ -13,16 +13,16 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
   List<dynamic> _prodottiAcquistati = [];
   bool _isLoadingLeft = false;
   bool _isLoadingRight = false;
-  bool _isLeftButtonPressed = false; // Stato per sapere se il bottone sinistro è stato premuto
-  bool _isLeftButtonCompleted = false; // Stato per sapere se i dati sono stati stampati a sinistra
-  String _dettagliSecondari = ''; // Dettagli secondari per la zona destra
+  bool _isLeftButtonPressed = false;
+  bool _isLeftButtonCompleted = false;
+  String _dettagliSecondari = '';
 
-  // Funzione per chiamare l'API e ottenere i dati
+
   Future<void> fetchAcquistiUtente(String utenteId) async {
     setState(() {
       _isLoadingLeft = true;
-      _isLeftButtonPressed = true; // Impostiamo che il bottone sinistro è stato premuto
-      _isLeftButtonCompleted = false; // Dati non ancora stampati
+      _isLeftButtonPressed = true;
+      _isLeftButtonCompleted = false;
     });
 
     try {
@@ -46,19 +46,19 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
     } finally {
       setState(() {
         _isLoadingLeft = false;
-        _isLeftButtonCompleted = true; // Dati stampati a sinistra
+        _isLeftButtonCompleted = true;
       });
     }
   }
 
-  // Funzione per la chiamata a destra (aggiuntiva)
+
   Future<void> fetchDettagliSecondari() async {
     setState(() {
       _isLoadingRight = true;
     });
 
     try {
-      // Simula una chiamata al backend per ottenere i dettagli secondari
+
       final response = await http.get(Uri.parse('http://localhost:6060/chiediAchat'));
 
       if (response.statusCode == 200) {
@@ -100,7 +100,7 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Casella di testo per l'inserimento dell'ID utente (solo numeri)
+                  // Casella di testo per l'inserimento dell'ID utente
                   TextField(
                     controller: _controller,
                     keyboardType: TextInputType.number, // Mostra la tastiera numerica
@@ -125,7 +125,7 @@ class _AnalizzaUtenteState extends State<AnalizzaUtente> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Colore del bottone
+                      backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
                     ),
                     child: _isLoadingLeft
