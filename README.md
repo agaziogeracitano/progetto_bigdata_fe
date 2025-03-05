@@ -1,6 +1,7 @@
 Il frontend è stato sviluppato utilizzando Flutter con il linguaggio Dart, per offrire un'interfaccia utente interattiva e reattiva. La dashboard permette di visualizzare i risultati delle query tramite grafici e tabelle, offrendo una panoramica completa dell'analisi del dataset. Il frontend si connette al backend tramite richieste HTTP a servizi RESTful.
 
 **Tecnologie Utilizzate**
+
 Flutter: Framework cross-platform
 
 Dart: Linguaggio di programmazione
